@@ -1,0 +1,21 @@
+.social{
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+.social svg{
+    cursor: pointer;
+    transition: 0.3s all;
+}
+.social .insta:hover{
+    color: palevioletred;
+}
+.social .face:hover{
+    color: var(--blue-color);
+}
+.social .youtube:hover{
+    color: red;
+}
+.social .twitter:hover{
+    color: var(--blue-light-color);
+}

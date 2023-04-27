@@ -9,6 +9,7 @@
   --font-bold-color: #252B42;
   --yellow-color: #F3CD03;
   --red-color: #E74040;
+  --font-raleway-small: 0.813rem;
 }
 @font-face {
   font-family: 'Monserrat';
@@ -30,7 +31,4 @@
 }
 .oswald{
   font-family: Oswald, Fallback, sans-serif;
-}
-body{
-  
 }
