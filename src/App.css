@@ -10,3 +10,27 @@
   --yellow-color: #F3CD03;
   --red-color: #E74040;
 }
+@font-face {
+  font-family: 'Monserrat';
+  src: url('/public/assets/fonts/Montserrat-Regular.ttf');
+}
+@font-face {
+  font-family: 'Raleway';
+  src: url('/public/assets/fonts/Raleway-Regular.ttf');
+}
+@font-face {
+  font-family: 'Oswald';
+  src: url('/public/assets/fonts/Oswald-Regular.ttf');
+}
+.montserrat{
+  font-family: Monserrat, Fallback, sans-serif;
+}
+.raleway{
+  font-family: Raleway, Fallback, sans-serif;
+}
+.oswald{
+  font-family: Oswald, Fallback, sans-serif;
+}
+body{
+  
+}
