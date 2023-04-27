@@ -10,7 +10,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    --bs-gutter-x: 5rem;
+    --bs-gutter-x: 4.3rem;
 }
 .contact-group{
     display: flex;
