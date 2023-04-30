@@ -10,7 +10,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    --bs-gutter-x: 4.3rem;
+    --bs-gutter-x: 4.8rem;
 }
 .contact-group{
     display: flex;
@@ -18,18 +18,12 @@
     align-items: center;
     gap: 29.5px;
 }
-.top-bar h6{
-    margin: 0;
-    font-size: var(--font-raleway-small);
-    font-weight: 700;
-    line-height: 18px;
-    letter-spacing: 0.2px;
-}
 .social-group{
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 15px;
+    font-size: var(--font-raleway-small);
 }
 @media screen and (max-width: 768px) {
     .top-bar{

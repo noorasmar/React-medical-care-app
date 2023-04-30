@@ -1,8 +1,11 @@
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
-import TopBar from './components/TopBar';
-import Nav from './components/Nav';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import './App.css';
+import {
+    TopBar, 
+    Nav
+} from './components';
 
 function App() {
   return (

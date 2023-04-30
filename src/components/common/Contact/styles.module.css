@@ -1,28 +1,21 @@
-.click{
+.contact-link{
+    text-decoration: none;
+    color: #fff;
+    margin: 0;
+    font-weight: bold;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+}
+.contact-link:hover{
     cursor: pointer;
     transition: 0.3s all;
+    color: var(--blue-light-color);
 }
-.click svg{
+.contact-link i{
     margin-right: 5px;
     width: 1rem;
     height: 1rem;
     font-weight: 700;
     cursor: pointer;
-}
-.click:hover svg{
-    color: var(--blue-light-color);
-}
-.click a{
-    text-decoration: none;
-    color: #fff;
-    margin: 0;
-    font-size: var(--font-raleway-small);
-    font-weight: 700;
-    line-height: 18px;
-    letter-spacing: 0.2px;
-}
-.click:hover a{
-    cursor: pointer;
-    transition: 0.3s all;
-    color: var(--blue-light-color);
+    font-weight: bolder;
 }

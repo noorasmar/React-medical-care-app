@@ -1,0 +1,63 @@
+.navbar{
+    background-color: #fff !important;
+    padding: 25px 0;
+}
+.container-fluid{
+    --bs-gutter-x: 4.8rem;
+    gap: 7.688rem; /*123px*/
+}
+.navbar-nav{
+    gap: 0.688rem;
+}
+.nav-link{
+    color: var(--font-color);
+    font-weight: 300;
+    font-size: 1.063rem;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+    transition: 0.3s all;
+}
+.nav-link:hover{
+    color: var(--blue-light-color);
+}
+.navbar-nav .nav-link.active{
+    color: var(--font-bold-color);
+    font-weight: 800;
+    font-size: 0.875rem;
+    line-height: 28px;
+}
+.dropdown-toggle svg{
+    margin-left: 10px;
+    font-weight: bold;
+    transform: scale(1.2);
+}
+.dropdown-toggle::after{
+    display: none;
+}
+.login{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+.login p{
+    color: var(--blue-light-color);
+    font-weight: 700;
+    font-size: 0.875rem; /*14px*/
+}
+.login p svg{
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    transform: scale(1.3);
+}
+.login svg{
+    color: var(--blue-light-color);
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+    .container-fluid{
+        --bs-gutter-x: 1.5rem;
+    }
+}

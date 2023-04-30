@@ -3,19 +3,13 @@
     justify-content: space-between;
     gap: 16px;
 }
-.social svg{
-    cursor: pointer;
+.social a{
+    color: #fff;
+}
+.social i{
     transition: 0.3s all;
+    font-size: 1rem;
 }
-.social .insta:hover{
-    color: palevioletred;
-}
-.social .face:hover{
-    color: var(--blue-color);
-}
-.social .youtube:hover{
-    color: red;
-}
-.social .twitter:hover{
+.social i:hover{
     color: var(--blue-light-color);
 }
