@@ -1,1 +1,9 @@
 export const LOGO = process.env.PUBLIC_URL + '/assets/images/logo.png';
+export const CARD_1 = process.env.PUBLIC_URL + '/assets/images/card-1.png';
+export const CARD_2 = process.env.PUBLIC_URL + '/assets/images/card-2.png';
+export const CARD_3 = process.env.PUBLIC_URL + '/assets/images/card-3.png';
+export const ORTHO = process.env.PUBLIC_URL + '/assets/images/orthopedics.jpg';
+export const PRENTAL = process.env.PUBLIC_URL + '/assets/images/prental.jpg';
+export const OUTPATIENT = process.env.PUBLIC_URL + '/assets/images/outpatient.jpg';
+export const NEURO = process.env.PUBLIC_URL + '/assets/images/neuro.jpg';
+export const CANCER = process.env.PUBLIC_URL + '/assets/images/cancer.jpg';

@@ -1,7 +1,42 @@
+h1{
+    margin: 0;
+    font-weight: 700;
+    font-size: 4.375rem;
+    letter-spacing: 0.2px;
+    line-height: 80px;
+    width: 60%;
+}
+h4{
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 30px;
+    letter-spacing: 0.2px;
+    width: 60%;
+}
+h5{
+    margin: 0;
+    font-weight: 900;
+    font-size: 1.063rem;
+    letter-spacing: 0.1px;
+    line-height: 24px;
+}
 h6{
     margin: 0;
     font-weight: 700;
     line-height: 18px;
     letter-spacing: 0.2px;
     font-size: var(--font-raleway-small);
+}
+@media screen and (max-width: 768px) {
+    h1{
+        font-size: 2.938rem;
+        letter-spacing: 0.2px;
+        line-height: 58px;
+        text-align: center;
+        width: 100%;
+    }
+    h4{
+        text-align: center;
+        width: 95%;
+    }
 }

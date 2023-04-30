@@ -6,7 +6,7 @@ import {Heading, SocialGroup} from '../common/';
 function TopBar() {
     return (
         <section className={styles['top-bar']}>
-            <div className={classnames('container-fluid', styles['container-fluid'])}>
+            <div className={classnames('container-fluid px-5', styles['container-fluid'])}>
                 <div className={styles['contact-group']}>
                     <Contact 
                         icon='phone' 

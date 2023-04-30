@@ -4,14 +4,18 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import './App.css';
 import {
     TopBar, 
-    Nav
+    Nav,
+    Header,
+    Statistics
 } from './components';
 
 function App() {
   return (
     <div className="App">
       <TopBar />
-      <Nav />
+      {/* <Nav /> */}
+      <Header />
+      {/* <Statistics /> */}
     </div>
   );
 }
