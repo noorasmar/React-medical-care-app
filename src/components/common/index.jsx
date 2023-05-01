@@ -15,3 +15,6 @@ export { default as ServicesItem } from './ServicesItem';
 export { default as PostItem } from './PostItem';
 export { default as ReviewItem } from './ReviewItem';
 export { default as Stars } from './Stars';
+export { default as Map } from './Map';
+export { default as Description } from './Description';
+export { default as ContactItem } from './ContactItem';

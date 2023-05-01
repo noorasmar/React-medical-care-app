@@ -10,7 +10,8 @@ import {
     Products,
     Services,
     Posts,
-    Reviews
+    Reviews,
+    ContactUs
 } from './components';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <Services />
       <Posts />
       <Reviews />
+      <ContactUs />
     </div>
   );
 }

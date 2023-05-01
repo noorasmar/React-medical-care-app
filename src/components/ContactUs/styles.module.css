@@ -1,0 +1,17 @@
+.contact{
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+.contact hr{
+    border: 2px solid #ECECEC;
+}
+@media screen and (max-width: 600px) {
+    .contact .g-5{
+        --bs-gutter-x: 0rem;
+    }
+}
+@media screen and (max-width: 768px) and (min-width: 600px) {
+    .contact .g-5{
+        --bs-gutter-x: 1rem;
+    }
+}
