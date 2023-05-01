@@ -18,15 +18,15 @@
 }
 @font-face {
   font-family: 'Monserrat';
-  src: url('/public/assets/fonts/Montserrat-Regular.ttf');
+  src: url('/public/assets/fonts/Montserrat-VariableFont_wght.ttf');
 }
 @font-face {
   font-family: 'Raleway';
-  src: url('/public/assets/fonts/Raleway-Regular.ttf');
+  src: url('/public/assets/fonts/Raleway-VariableFont_wght.ttf');
 }
 @font-face {
   font-family: 'Oswald';
-  src: url('/public/assets/fonts/Oswald-Regular.ttf');
+  src: url('/public/assets/fonts/Oswald-VariableFont_wght.ttf');
 }
 .montserrat{
   font-family: Monserrat, Fallback, sans-serif;
