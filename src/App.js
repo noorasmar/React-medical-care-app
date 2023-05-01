@@ -7,7 +7,8 @@ import {
     Nav,
     Header,
     Statistics,
-    Products
+    Products,
+    Services
 } from './components';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Header />
       <Statistics />
       <Products />
+      <Services />
     </div>
   );
 }

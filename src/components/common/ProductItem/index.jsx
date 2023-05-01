@@ -11,7 +11,7 @@ function ProductItem({title, category, imgSrc, price}) {
             </span>
             <img src={process.env.PUBLIC_URL + imgSrc} alt={title} />
             <h5>
-                {price}
+                ${price}
             </h5>
         </div>
     );

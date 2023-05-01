@@ -5,6 +5,8 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 7px;
+    overflow: hidden;
+    cursor: pointer;
 }
 .item h5{
     font-weight: 900;
@@ -12,4 +14,19 @@
     line-height: 24px;
     letter-spacing: 0.1px;
     color: var(--font-bold-color);
+    transition: 0.3s all;
+}
+.item:hover h5{
+    color: var(--blue-light-color);
+}
+.item img{
+    width: 100%;
+    height: 200px;
+    transition: 0.3s all;
+}
+.item:hover img{
+    transform: scale(1.05);
+}
+.item h5:last-of-type{
+    color: var(--green-light-color);
 }
