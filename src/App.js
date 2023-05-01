@@ -6,7 +6,8 @@ import {
     TopBar, 
     Nav,
     Header,
-    Statistics
+    Statistics,
+    Products
 } from './components';
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
       <TopBar />
       {/* <Nav /> */}
       <Header />
-      {/* <Statistics /> */}
+      <Statistics />
+      <Products />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import styles from './styles.module.css';
 import Contact from '../common/Contact';
-import {Heading, SocialGroup} from '../common/';
+import {SocialGroup} from '../common/';
 
 function TopBar() {
     return (
@@ -17,13 +17,13 @@ function TopBar() {
                         info='michelle.rivera@example.com'
                     />
                 </div>
-                <Heading type='h6' font='raleway'>
+                <h6 className='raleway'>
                     Follow Us  and get a chance to win 80% off
-                </Heading>
+                </h6>
                 <div className={styles['social-group']}>
-                    <Heading type='h6' font='raleway'>
+                    <h6 className='raleway'>
                         Follow Us :
-                    </Heading>
+                    </h6>
                     <SocialGroup />
                 </div>
             </div>

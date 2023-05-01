@@ -1,5 +1,4 @@
 export { default as Contact } from './Contact';
-export { default as Heading } from './Heading';
 export { default as Search } from './Search';
 export { default as SocialGroup } from './SocialGroup';
 export { default as Login } from './Login';
@@ -10,3 +9,4 @@ export { default as ReadMore } from './ReadMore';
 export { default as FeaturedItem } from './FeaturedItem';
 export { default as StatisticsItem } from './StatisticsItem';
 export { default as Menu } from './Menu';
+export { default as ProductItem } from './ProductItem';

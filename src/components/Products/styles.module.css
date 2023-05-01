@@ -1,0 +1,20 @@
+.products{
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.products h4{
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 30px;
+    letter-spacing: 0.2px;
+    color: var(--font-color);
+    margin-bottom: 10px;
+}
+.products h3{
+    font-weight: 500;
+    font-size: 1.625rem;
+    line-height: 30px;
+    letter-spacing: 0.1px;
+    color: var(--blue-light-color);
+    margin-bottom: 36px;
+}

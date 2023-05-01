@@ -5,7 +5,14 @@ function StatisticsItem({src, title, num}) {
     return (
         <div className={styles.item} style={{backgroundImage: `url(${src})`}}>
             <Overlay />
-            <img src={src} className="card-img-top" alt="..."/>
+            <div className={styles.info}>
+                <h3 className='oswald'>
+                    {title}
+                </h3>
+                <h6 className='montserrat'>
+                    {num} Items
+                </h6>
+            </div>
         </div>
     );
 }

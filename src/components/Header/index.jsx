@@ -3,7 +3,6 @@ import classnames from 'classnames';
 import Featured from './../Featured/index';
 import {
     Overlay,
-    Heading,
     ReadMore
 } from '../common/';
 
@@ -13,12 +12,16 @@ function Header() {
             <Overlay />
             <div className={classnames('container', styles['container'])}>
                 <div className={styles.title}>
-                    <Heading type='h5' font='raleway'>SUMMER 2020</Heading>
-                    <Heading type='h1' font='oswald'>Professional Medical Care</Heading>
-                    <Heading type='h4' font='montserrat'>
+                    <h5 className='raleway'>
+                        SUMMER 2020
+                    </h5>
+                    <h1 className='oswald'>
+                        Professional Medical Care
+                    </h1>
+                    <h4 className='montserrat'>
                         We know how large objects will act, 
                         but things on a small scale.
-                    </Heading>
+                    </h4>
                     <ReadMore />
                 </div>
             </div>

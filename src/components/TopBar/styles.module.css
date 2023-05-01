@@ -22,7 +22,14 @@
     justify-content: space-between;
     align-items: center;
     gap: 15px;
-    font-size: var(--font-raleway-small);
+    font-size: 0.813rem;
+}
+.top-bar h6{
+    margin: 0;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    font-size: 0.813rem;
 }
 @media screen and (max-width: 768px) {
     .top-bar{
