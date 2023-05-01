@@ -1,0 +1,95 @@
+footer .social{
+    padding: 40px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #E6E6E6;
+}
+footer .media{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+footer .media i{
+    font-size: 23px;
+    color: var(--blue-light-color);
+}
+footer .links{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+footer .links .item{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+footer .links .item h5{
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: var(--font-bold-color);
+}
+footer .links .item a{
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 1.063rem;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    color: var(--font-color);
+}
+footer .links .group input{
+    background-color: #F9F9F9;
+    color: #E6E6E6;
+    padding: 15px 20px;
+    border: 1px solid #E6E6E6;
+    border-radius: 5px;
+}
+footer .links .group button{
+    margin-left: -10px;
+    background-color: #23A6F0;
+    color: #E6E6E6;
+    padding: 15px 20px;
+    border: 2px solid #E6E6E6;
+    border-radius: 0px 5px 5px 0px;
+}
+footer .links .group small{
+    display: block;
+    font-weight: 500;
+    font-size: 0.75rem;
+    line-height: 28px;
+    letter-spacing: 0.2px;
+    color: var(--font-color);
+}
+footer .copy{
+    padding: 25px 0px;
+}
+footer .copy h6{
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    color: var(--font-color);
+}
+@media screen and (max-width: 600px) {
+    footer .social{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 11.5px;
+    }
+    footer .links .group input{
+        width: 60%;
+    }
+    footer .copy h6{
+        width: 80%;
+        margin: auto;
+        text-align: center;
+    }
+}
+@media screen and (min-width: 600px) and (max-width: 768px){
+    footer .links .group input{
+        width: 50%;
+    }
+}

@@ -8,3 +8,5 @@ export { default as Services} from './Services';
 export { default as Posts} from './Posts';
 export { default as Reviews} from './Reviews';
 export { default as ContactUs} from './ContactUs';
+export { default as Subscribe} from './Subscribe';
+export { default as Footer} from './Footer';

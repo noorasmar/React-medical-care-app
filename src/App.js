@@ -11,7 +11,9 @@ import {
     Services,
     Posts,
     Reviews,
-    ContactUs
+    ContactUs,
+    Subscribe,
+    Footer
 } from './components';
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
       <Posts />
       <Reviews />
       <ContactUs />
+      <Subscribe />
+      <Footer />
     </div>
   );
 }
