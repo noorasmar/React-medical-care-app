@@ -1,6 +1,4 @@
 .title{
-    padding-top: 80px;
-    padding-bottom: 80px;
     text-align: center;
 }
 .title h4{
@@ -25,7 +23,9 @@
     line-height: 26px;
     letter-spacing: 0.2px;
     color: var(--font-color);
+    margin: auto;
     margin-bottom: 80px;
+    width: 50%;
 }
 @media screen and (max-width: 600px) {
     .title h2{
@@ -33,5 +33,8 @@
         font-size: 1.625rem;
         line-height: 30px;
         letter-spacing: 0.1px;
+    }
+    .title p{
+        width: 100%;
     }
 }

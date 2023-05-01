@@ -8,7 +8,9 @@ import {
     Header,
     Statistics,
     Products,
-    Services
+    Services,
+    Posts,
+    Reviews
 } from './components';
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
       <Statistics />
       <Products />
       <Services />
+      <Posts />
+      <Reviews />
     </div>
   );
 }

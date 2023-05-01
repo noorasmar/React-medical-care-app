@@ -12,3 +12,6 @@ export { default as Menu } from './Menu';
 export { default as ProductItem } from './ProductItem';
 export { default as Title } from './Title';
 export { default as ServicesItem } from './ServicesItem';
+export { default as PostItem } from './PostItem';
+export { default as ReviewItem } from './ReviewItem';
+export { default as Stars } from './Stars';

@@ -1,0 +1,113 @@
+.item{
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+.item .image{
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    transition: 0.3s all;
+}
+.item:hover .image{
+    filter: grayscale(100%);
+}
+.item .image h6{
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    background-color: var(--red-color);
+    padding: 0px 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    text-align: center;
+}
+.item .data{
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+.item .data .category{
+    display: flex;
+    gap: 15px;
+}
+.item .data small{
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    color: var(--font-color);
+    cursor: pointer;
+}
+.item .data small.active{
+    color: var(--blue-lightest-color);
+}
+.item .data h4{
+    font-weight: 400;
+    font-size: 1.25rem;
+    width: 70%;
+    line-height: 30px;
+    letter-spacing: 0.2px;
+    color: var(--font-bold-color);
+}
+.item .data p{
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: var(--font-color);
+    width: 75%;
+}
+.item .more{
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+.item .more .date i{
+    margin-right: 5px;
+    color: var(--blue-light-color);
+}
+.item .more .comments i{
+    margin-right: 5px;
+    color: var(--green-color);
+}
+.item .more small{
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    color: var(--font-color);
+}
+.item .learn{
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+}
+.item .learn h6{
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    color: var(--font-color);
+    margin: 0;
+}
+.item .learn i{
+    color: var(--blue-light-color);
+    display: block;
+}
