@@ -16,6 +16,8 @@ function Posts() {
                                 <div className="col-md-4" key={index}>
                                     <PostItem 
                                         google={el.google}
+                                        trending={el.trending}
+                                        newEvents={el.newEvents}
                                         info={el.info}
                                         date={el.date}
                                         comments={el.comments}

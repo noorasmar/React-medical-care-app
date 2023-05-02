@@ -1,7 +1,11 @@
+import { useState } from 'react';
 import styles from './styles.module.css'
 import classnames from 'classnames';
 
-function PostItem({google, info, date, comments, imgSrc}) {
+function PostItem({google, trending, newEvents, info, date, comments, imgSrc}) {
+    const [title, setTitle] = useState(google)
+    const [active, setActive] = useState('google')
+
     return (
         <div className={styles.item}>
             <div className={styles.image} style={{backgroundImage: `url('${imgSrc}')`}}>
@@ -9,12 +13,14 @@ function PostItem({google, info, date, comments, imgSrc}) {
             </div>
             <div className={styles.data}>
                 <div className={styles.category}>
-                    <small className={classnames('active montserrat',styles.active)}>Google</small>
-                    <small className='montserrat'>Trending</small>
-                    <small className='montserrat'>New</small>
+                    <small className={classnames(`${active} montserrat`,{[styles.active]: active === 'google'})} onClick={()=>{setTitle('google'); setActive('google')}}>Google</small>
+                    <small className={classnames(`${active} montserrat`,{[styles.active]: active === 'trending'})} onClick={()=>{setTitle(trending);setActive('trending')}}>Trending</small>
+                    <small className={classnames(`${active} montserrat`,{[styles.active]: active === 'new'})} onClick={()=>{setTitle(newEvents);setActive('new')}}>New</small>
                 </div>
                 <h4 className='montserrat'>
-                    {google}
+                    {
+                        title 
+                    }
                 </h4>
                 <p className='montserrat'>
                     {info}
