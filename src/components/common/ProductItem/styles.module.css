@@ -33,6 +33,29 @@
 .item:hover img{
     transform: scale(1.05);
 }
-.item h5:last-of-type{
+.item .footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.item .footer h5:last-of-type{
     color: var(--green-light-color);
+}
+.item .footer .tools{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.item .footer .tools i{
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--font-color);
+}
+.item .footer .tools i:hover{
+    color: var(--blue-color);
+}
+.item .footer .tools i:last-of-type:hover{
+    color: var(--red-color);
 }

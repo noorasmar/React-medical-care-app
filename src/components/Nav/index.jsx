@@ -5,8 +5,7 @@ import {
     Login,
     Search,
     Cart,
-    Love,
-    Menu
+    Love
 }from './../common/'
 
 function Nav() {
