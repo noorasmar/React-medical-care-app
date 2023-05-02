@@ -4,7 +4,7 @@ function Stars({stars}) {
     const fillStars = [];
     const emptyStars = [];
     const halfStars = [];
-    const numEmpty = Math.floor(5- stars)
+    const numEmpty = stars > 0 ? Math.floor(5- stars) : 5
     const numHalf = !Number.isInteger(stars) ? 1 : 0
 
     for (let i = 0; i < Math.floor(stars) && i < 5; i++) {
