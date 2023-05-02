@@ -12,13 +12,17 @@ import {
 function Nav() {
     return (
         <nav className={classnames('navbar navbar-expand-lg bg-body-tertiary', styles['navbar'])}>
-            <div className={classnames('container-fluid px-5', styles['container-fluid'])}>
+            <div className={classnames('container-fluid px-5', styles['container-fluid'], styles['px-5'])}>
                 <a className="navbar-brand" href="#">
                     <img src={LOGO} alt="logo" />
                 </a>
-                <button className={classnames('navbar-toggler', styles['navbar-toggler'])} type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <Menu />
-                </button>
+                <div className={styles['menu-mobile']}>
+                    <i className="bi bi-search"></i>
+                    <i className="bi bi-cart"></i>
+                    <button className={classnames('navbar-toggler', styles['navbar-toggler'])} type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i className="bi bi-list"></i>
+                    </button>
+                </div>
                 <div className={classnames('collapse navbar-collapse raleway', styles['navbar-collapse'])} id="navbarSupportedContent">
                     <ul className={classnames('navbar-nav me-auto mb-2 mb-lg-0', styles['navbar-nav'])}>
                         <li className="nav-item">

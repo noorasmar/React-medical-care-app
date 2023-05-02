@@ -7,7 +7,13 @@
     z-index: 99999;
 }
 .container-fluid{
-    gap: 7.688rem; /*123px*/
+    gap: 5rem; /*123px*/
+}
+.navbar .menu-mobile{
+    display: none;
+}
+.navbar .menu-mobile i{
+    color: var(--font-color);
 }
 .navbar-nav{
     gap: 0.688rem;
@@ -48,6 +54,15 @@
 }
 @media screen and (max-width: 768px) {
     .container-fluid{
+        gap: 5px;
+    }
+    .px-5{
+        padding-right: 1rem !important;
+        padding-left: 1rem !important;
+    }
+    .navbar .menu-mobile{
+        display: flex;
+        justify-content: space-between;
         gap: 20px;
     }
     .menu-item{
