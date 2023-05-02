@@ -18,3 +18,17 @@
     color: var(--blue-light-color);
     margin-bottom: 36px;
 }
+.products .desktop{
+    display: flex;
+}
+.products .mobile{
+    display: none;
+}
+@media screen and (max-width: 768px) {
+    .products .desktop{
+        display: none;
+    }
+    .products .mobile{
+        display: flex;
+    }
+}
