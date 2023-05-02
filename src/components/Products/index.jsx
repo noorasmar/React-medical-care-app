@@ -47,9 +47,10 @@ function Products() {
                 </h3>                
                 <div className={classnames("row g-4 desktop",styles['desktop'])}>
                     {       
-                            PRODUCTS.map((el, index) => (
-                                <div className="col-md-3" key={index}>
+                            PRODUCTS.map((el) => (
+                                <div className="col-md-3" key={el.id}>
                                     <ProductItem
+                                    id={el.id}
                                     title={el.title}
                                     category={el.category}
                                     imgSrc={el.imgSrc}
@@ -61,9 +62,10 @@ function Products() {
                 <div className={classnames("row g-4 mobile",styles['mobile'])}>
                     <div className="col-md-12">
                         <Slider {...settings} arrows={false} className="slick-slider">
-                            {PRODUCTS.map((el, index) => (
-                                <div className="col-md-3" key={index}>
+                            {PRODUCTS.map((el) => (
+                                <div className="col-md-3" key={el.id}>
                                     <ProductItem
+                                    id={el.id}
                                     title={el.title}
                                     category={el.category}
                                     imgSrc={el.imgSrc}

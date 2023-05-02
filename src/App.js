@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import LovesContext from './contexts/LovesContext';
+import { CartProvider } from './contexts/CartContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -23,19 +24,21 @@ function App() {
 
   return (
     <div className="App">
-      <LovesContext.Provider value={{ loves, setLoves }}>
-        <TopBar />
-        <Nav />
-        <Header />
-        <Statistics />
-        <Products />
-        <Services />
-        <Posts />
-        <Reviews />
-        <ContactUs />
-        <Subscribe />
-        <Footer />
-      </LovesContext.Provider>
+      <CartProvider>
+        <LovesContext.Provider value={{ loves, setLoves }}>
+          <TopBar />
+          <Nav />
+          <Header />
+          <Statistics />
+          <Products />
+          <Services />
+          <Posts />
+          <Reviews />
+          <ContactUs />
+          <Subscribe />
+          <Footer />
+        </LovesContext.Provider>
+      </CartProvider>
     </div>
   );
 }

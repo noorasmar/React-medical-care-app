@@ -1,15 +1,19 @@
+import { useContext } from 'react';
 import styles from './styles.module.css'
 import CartItem from '../CartItem';
+import CartContext from './../../../contexts/CartContext';
 
 function Cart() {
+    const { cartItems } = useContext(CartContext);
+
     return (
         <div className={styles.cart}>
-            <i className="bi bi-cart"></i> 0
+            <i className="bi bi-cart"></i> {cartItems.length}
             <div className={styles['cart-box']}>
                 <div className={styles.number}>
                     <div className={styles.cart}>
                         <i className="bi bi-cart3"></i>
-                        <span>4</span>
+                        <span>{cartItems.length}</span>
                     </div>
                     <div>
                         <span>
@@ -18,10 +22,20 @@ function Cart() {
                         $2,876
                     </div>
                 </div>
-                <CartItem />
-                <CartItem />
-                <CartItem />
-                <CartItem />
+                {
+                    cartItems.map((el)=>{
+                        return (
+                                <CartItem 
+                                    key={el.id}
+                                    title={el.title}
+                                    price={el.price}
+                                    quantity={el.quantity}
+                                    imgSrc={el.imgSrc}
+                                />
+                            )
+                    })
+                }
+
                 <div className={styles.check}>
                     <button>Checkout</button>
                 </div>

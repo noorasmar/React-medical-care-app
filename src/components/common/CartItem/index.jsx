@@ -1,17 +1,17 @@
 import styles from './styles.module.css'
 
-function CartItem() {
+function CartItem({title, price, quantity, imgSrc}) {
     return (
         <div className={styles.item}>
-            <img src={process.env.PUBLIC_URL + '/assets/images/tool1.png'} alt="tool" />
+            <img src={process.env.PUBLIC_URL + imgSrc} alt="tool" />
             <div className={styles.info}>
-                <h6>Sony</h6>
+                <h6>{title}</h6>
                 <div className={styles.desc}>
                     <span>
-                        $848.45
+                        ${price}
                     </span>
                     <span>
-                        Quantity: 01
+                        Quantity: {quantity}
                     </span>
                 </div>
             </div>
