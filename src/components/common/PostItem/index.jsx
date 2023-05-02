@@ -13,7 +13,7 @@ function PostItem({google, trending, newEvents, info, date, comments, imgSrc}) {
             </div>
             <div className={styles.data}>
                 <div className={styles.category}>
-                    <small className={classnames(`${active} montserrat`,{[styles.active]: active === 'google'})} onClick={()=>{setTitle('google'); setActive('google')}}>Google</small>
+                    <small className={classnames(`${active} montserrat`,{[styles.active]: active === 'google'})} onClick={()=>{setTitle(google); setActive('google')}}>Google</small>
                     <small className={classnames(`${active} montserrat`,{[styles.active]: active === 'trending'})} onClick={()=>{setTitle(trending);setActive('trending')}}>Trending</small>
                     <small className={classnames(`${active} montserrat`,{[styles.active]: active === 'new'})} onClick={()=>{setTitle(newEvents);setActive('new')}}>New</small>
                 </div>

@@ -18,3 +18,4 @@ export { default as Stars } from './Stars';
 export { default as Map } from './Map';
 export { default as Description } from './Description';
 export { default as ContactItem } from './ContactItem';
+export { default as CartItem } from './CartItem';

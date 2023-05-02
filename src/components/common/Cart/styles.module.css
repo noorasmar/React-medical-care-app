@@ -2,4 +2,69 @@
     color: var(--blue-light-color);
     font-weight: 700;
     font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+}
+.cart-box{
+    display: none;
+    background-color: #fff;
+    padding: 10px 0px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    width: 300px;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.cart-box .number{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+    border-bottom: 1px solid #E6E6E6;
+    position: relative;
+}
+.cart-box .number::before{
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: 10px;
+    border: 10px solid #fff;
+    border-color: transparent transparent #fff transparent;
+}
+.cart-box .number .cart i{
+    font-size: 0.9rem;
+    font-weight: 900;
+    color: var(--font-color);
+}
+.cart-box .number .cart span{
+    padding: 5px 10px;
+    border-radius: 50%;
+    background-color: var(--blue-light-color);
+    color: #fff;
+    font-weight: 900;
+    margin-left: 5px;
+}
+.cart-box .number div{
+    font-size: 0.8rem;
+}
+.cart-box .number div span{
+    color: var(--font-color);
+    margin-right: 3px;
+    font-weight: 300;
+}
+.cart:hover .cart-box{
+    display: block;
+}
+.cart-box .check{
+    padding: 10px 20px;
+}
+.cart-box .check button{
+    padding: 10px 15px;
+    color: #fff;
+    background-color: var(--blue-light-color);
+    border: 1px solid var(--blue-light-color);
+    border-radius: 3px;
+    width: 100%;
 }

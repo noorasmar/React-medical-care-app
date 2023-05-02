@@ -1,0 +1,29 @@
+.item{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 20px;
+    transition: 0.3s all;
+    border: 5px solid #fff;
+}
+.item:hover{
+    border-right: 5px solid var(--blue-light-color);
+}
+.item img{
+    width: 20%;
+}
+.item .desc{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    width: 100%;
+    font-weight: 300;
+    gap: 10px;
+}
+.item .desc span:first-of-type{
+    color: var(--blue-light-color);
+}
+.item .desc span:last-of-type{
+    color: var(--font-color);
+}
