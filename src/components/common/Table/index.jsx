@@ -19,6 +19,8 @@ function Table() {
     const [category, setCategory] = useState('');
     const [price, setPrice] = useState(0);
     const [imgSrc, setImgSrc] = useState('/assets/images/tool1.png');
+    const [productImage, setProductImage] = useState(null);
+    const [imageURL, setImageURL] = useState("");
 
     useEffect(() => {
         if (productAdded.length > 0) {
@@ -46,6 +48,29 @@ function Table() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        //Upload image 
+        const formData = new FormData();
+        formData.append("file", productImage);
+        formData.append("filename", productImage.name);
+        try {
+            const response = await fetch(
+                "https://api.github.com/repos/noorasmar/React-medical-care-app/assets/contents/" +
+                productImage.name,
+                {
+                method: "PUT",
+                headers: {
+                    Authorization: "Bearer <your_github_personal_access_token>",
+                },
+                body: formData,
+                }
+            );
+            const data = await response.json();
+            console.log(data);
+            setImageURL(data.content.download_url);
+        } catch (error) {
+            console.error(error);
+        }
+
         try {
             const productData = { title, category, price, imgSrc};
             addProduct(productData, (newProduct) => {
@@ -146,6 +171,10 @@ function Table() {
                                     <div className="mb-3">
                                         <label htmlFor="price" className="form-label">Price :</label>
                                         <input type="number" value={price} onChange={e => setPrice(e.target.value)} className="form-control" id="price" placeholder="6.48" required/>
+                                    </div>
+                                    <div className="mb-3">
+                                        <label htmlFor="imgupload" className="form-label">Price :</label>
+                                        <input type="file" onChange={e => setProductImage(e.target.files[0])} className="form-control" id="imgupload"/>
                                     </div>
                             </div>
                             <div className="modal-footer">
