@@ -3,6 +3,7 @@ import { useProductList } from '../../../hooks/useProductList';
 import useAddProduct from '../../../hooks/useAddProduct';
 import useUpdateProduct from './../../../hooks/useUpdateProduct';
 import useDeleteProduct from './../../../hooks/useDeleteProduct';
+import useImageToBinary from './../../../hooks/useImageToBinary';
 import Loader from '../Loader';
 import { useState } from 'react';
 
@@ -50,7 +51,7 @@ function Table() {
     const handleDelete = async (event) => {
         event.preventDefault();
         
-        deleteProduct(9)
+        deleteProduct(id)
     }
 
     return (
