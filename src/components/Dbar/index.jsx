@@ -10,7 +10,7 @@ function Bar() {
                     <i className="bi bi-person-bounding-box"></i> Noor Asmar
                 </div>
                 <div className={styles['log-out']}>
-                    <Link to="/">
+                    <Link to={process.env.PUBLIC_URL+"/"}>
                         <i className="bi bi-box-arrow-right"></i> Log Out
                     </Link>
                 </div>
