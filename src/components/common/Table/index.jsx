@@ -37,7 +37,7 @@ function Table() {
         event.preventDefault();
         try {
             const productData = { title, category, price, imgSrc};
-            updateProduct(9,productData, (newProduct) => {
+            updateProduct(id, productData, (newProduct) => {
                 setTitle('')
                 setCategory('')
                 setPrice(0)
@@ -89,8 +89,8 @@ function Table() {
                                                 <td>{el.title}</td>
                                                 <td>{el.category}</td>
                                                 <td>${el.price}</td>
-                                                <td><button type="button" className="btn btn-link" data-bs-toggle="modal" onClick={e => setId(e.target.value)} data-bs-target="#exampleModal2">Edit</button></td>
-                                                <td><button type="button" className="btn btn-danger" data-bs-toggle="modal" onClick={e => setId(e.target.value)} data-bs-target="#exampleModal3">Delete</button></td>
+                                                <td><button type="button" className="btn btn-link" data-bs-toggle="modal" onClick={e => setId(el.id)} data-bs-target="#exampleModal2">Edit</button></td>
+                                                <td><button type="button" className="btn btn-danger" data-bs-toggle="modal" onClick={e => setId(el.id)} data-bs-target="#exampleModal3">Delete</button></td>
                                             </tr>
                                     )
                                 })
