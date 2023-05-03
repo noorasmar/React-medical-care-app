@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { Delete_PRODUCT_API } from '../API/api';
 
 const useDeleteProduct = () => {
+    const [productDeleted, setProductDetleted] = useState([]);
     
     const deleteProduct = async (id) => {
         try {
@@ -11,12 +13,14 @@ const useDeleteProduct = () => {
                 if (!response.ok) {
                     throw new Error('Delete failed');
                 }
+                const data = await response.json();
+                setProductDetleted([data])
             }catch (error) {
                 console.error(error);
                 return null;
             }
         }
         
-        return deleteProduct;
+        return {productDeleted, deleteProduct};
 }
 export default useDeleteProduct;

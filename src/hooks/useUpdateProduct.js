@@ -1,7 +1,8 @@
-
+import { useState } from 'react';
 import { UPDATE_PRODUCT_API } from '../API/api';
 
 const useUpdateProduct = () => {
+    const [productUpdated, setProductUpdated] = useState([]);
     
     const updateProduct = async (id, newData) => {
         try {
@@ -12,13 +13,13 @@ const useUpdateProduct = () => {
                     },
                     body: JSON.stringify(newData),
                 });
-                const data = await response.json();
                 
                 if (!response.ok) {
                     throw new Error(data.message || 'Update failed');
                 }
 
-                return data;
+                const data = await response.json();
+                setProductUpdated([data])
 
             } catch (error) {
                 console.error(error);
@@ -26,6 +27,6 @@ const useUpdateProduct = () => {
             }
         }
         
-        return updateProduct;
+        return {productUpdated, updateProduct};
 }
 export default useUpdateProduct;

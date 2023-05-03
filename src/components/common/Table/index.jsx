@@ -5,21 +5,45 @@ import useUpdateProduct from './../../../hooks/useUpdateProduct';
 import useDeleteProduct from './../../../hooks/useDeleteProduct';
 import useImageToBinary from './../../../hooks/useImageToBinary';
 import Loader from '../Loader';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function Table() {
-    const { isLoading, error, addProduct } = useAddProduct();
-    const updateProduct = useUpdateProduct();
-    const deleteProduct = useDeleteProduct();
 
-    const {products, loading} = useProductList();
+    const {products, loading, setProducts} = useProductList();
+    const {productAdded, addProduct} = useAddProduct();
+    const {productUpdated, updateProduct} = useUpdateProduct();
+    const {productDeleted, deleteProduct} = useDeleteProduct();
+
     const [id, setId] = useState(0);
     const [title, setTitle] = useState('');
     const [category, setCategory] = useState('');
     const [price, setPrice] = useState(0);
     const [imgSrc, setImgSrc] = useState('/assets/images/tool1.png');
 
-    
+    useEffect(() => {
+        if (productAdded.length > 0) {
+            
+            setProducts([...products, ...productAdded]);
+        }
+    }, [productAdded]);
+
+    useEffect(() => {
+        if (productDeleted.length > 0) {
+        const deletedProductId = productDeleted[0].id;
+        setProducts(products.filter((product) => product.id !== deletedProductId));
+    }
+    }, [productDeleted]);
+
+    useEffect(() => {
+        if (productUpdated.length > 0) {
+            const updatedProduct = productUpdated[0];
+            const updatedProductIndex = products.findIndex(product => product.id === updatedProduct.id);
+            const updatedProductDataCopy = [...products];
+            updatedProductDataCopy[updatedProductIndex] = updatedProduct;
+            setProducts(updatedProductDataCopy);
+        }
+    }, [productUpdated]);
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
@@ -86,7 +110,7 @@ function Table() {
                                     return (
                                             <tr key={el.id} className={styles['row-data']}>
                                                 <td>{el.id}</td>
-                                                <td><img src={el.imgSrc} alt={el.title} /> </td>
+                                                <td><img src={process.env.PUBLIC_URL + el.imgSrc} alt={el.title} /> </td>
                                                 <td>{el.title}</td>
                                                 <td>{el.category}</td>
                                                 <td>${el.price}</td>

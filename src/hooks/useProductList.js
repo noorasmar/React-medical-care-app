@@ -12,5 +12,5 @@ export function useProductList() {
         setLoading(false);
     }, []);
 
-    return {products, loading};
+    return {products, loading, setProducts};
 }
