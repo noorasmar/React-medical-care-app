@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/React-medical-care-app/static/css/main.e1cbe3ba.css",
-    "main.js": "/React-medical-care-app/static/js/main.1ebbb2e2.js",
+    "main.js": "/React-medical-care-app/static/js/main.11dda448.js",
     "static/media/header.jpg": "/React-medical-care-app/static/media/header.402a5e2dd179c35bcd5f.jpg",
     "static/media/Raleway-VariableFont_wght.ttf": "/React-medical-care-app/static/media/Raleway-VariableFont_wght.238c232d5e08ec0c1c74.ttf",
     "static/media/Montserrat-VariableFont_wght.ttf": "/React-medical-care-app/static/media/Montserrat-VariableFont_wght.c28a96c369871653b853.ttf",
@@ -10,10 +10,10 @@
     "static/media/bootstrap-icons.woff2?": "/React-medical-care-app/static/media/bootstrap-icons.6d63d0501e5ed7b79dab.woff2",
     "index.html": "/React-medical-care-app/index.html",
     "main.e1cbe3ba.css.map": "/React-medical-care-app/static/css/main.e1cbe3ba.css.map",
-    "main.1ebbb2e2.js.map": "/React-medical-care-app/static/js/main.1ebbb2e2.js.map"
+    "main.11dda448.js.map": "/React-medical-care-app/static/js/main.11dda448.js.map"
   },
   "entrypoints": [
     "static/css/main.e1cbe3ba.css",
-    "static/js/main.1ebbb2e2.js"
+    "static/js/main.11dda448.js"
   ]
 }
