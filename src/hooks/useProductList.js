@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
+import { LIST_PRODUCTS } from '../API/api';
 
 export function useProductList() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-    fetch('https://645164e6a3221969116291d5.mockapi.io/api/v1/product')
+    fetch(LIST_PRODUCTS)
         .then(response => response.json())
         .then(data => setProducts(data.slice(0, 8)));
     }, []);
