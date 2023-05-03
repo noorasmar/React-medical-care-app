@@ -48,7 +48,7 @@ function Table() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
+        const GITHUB_TOKEN = "";
 
         //Upload image 
         const formData = new FormData();
@@ -61,7 +61,7 @@ function Table() {
                 {
                 method: "PUT",
                 headers: {
-                    Authorization: "Bearer "+ GITHUB_TOKEN,
+                    Authorization: `Bearer ${GITHUB_TOKEN}`,
                 },
                 body: formData,
                 }
