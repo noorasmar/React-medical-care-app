@@ -48,6 +48,8 @@ function Table() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
+
         //Upload image 
         const formData = new FormData();
         formData.append("file", productImage);
@@ -59,14 +61,14 @@ function Table() {
                 {
                 method: "PUT",
                 headers: {
-                    Authorization: "Bearer <your_github_personal_access_token>",
+                    Authorization: "Bearer "+ GITHUB_TOKEN,
                 },
                 body: formData,
                 }
             );
             const data = await response.json();
             console.log(data);
-            setImageURL(data.content.download_url);
+            setImgSrc(data.content.download_url);
         } catch (error) {
             console.error(error);
         }
