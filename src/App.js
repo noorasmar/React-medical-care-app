@@ -11,8 +11,8 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route exact path="/" element={<HomePage />} />
-        <Route path="/DashboardPage" element={<DashboardPage />} />
+        <Route exact path={process.env.PUBLIC_URL + "/"} element={<HomePage />} />
+        <Route path={process.env.PUBLIC_URL + "/DashboardPage"} element={<DashboardPage />} />
       </Routes>
     </div>
   );
