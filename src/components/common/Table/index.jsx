@@ -18,7 +18,7 @@ function Table() {
     const [title, setTitle] = useState('');
     const [category, setCategory] = useState('');
     const [price, setPrice] = useState(0);
-    const [imgSrc, setImgSrc] = useState('/assets/images/tool1.png');
+    const [imgSrc, setImgSrc] = useState('');
     const [productImage, setProductImage] = useState(null);
     const [imageURL, setImageURL] = useState("");
 
@@ -52,29 +52,18 @@ function Table() {
 
         //Upload image 
         const formData = new FormData();
-        formData.append("file", productImage);
-        formData.append("filename", productImage.name);
+        formData.append("image", productImage);
+        const apiKey = '0909b78b2cea8a69a0dca74e605e3fe9'
         try {
             const response = await fetch(
-                "https://api.github.com/repos/noorasmar/React-medical-care-app/assets/contents/" +
-                productImage.name,
+                `https://api.imgbb.com/1/upload?key=${apiKey}`,
                 {
-                method: "PUT",
-                headers: {
-                    Authorization: `Bearer ${GITHUB_TOKEN}`,
-                },
-                body: formData,
+                    method: "POST",
+                    body: formData,
                 }
             );
             const data = await response.json();
-            console.log(data);
-            setImgSrc(data.content.download_url);
-        } catch (error) {
-            console.error(error);
-        }
-
-        try {
-            const productData = { title, category, price, imgSrc};
+            const productData = { title, category, price, imgSrc: data.data.url};
             addProduct(productData, (newProduct) => {
                 setTitle('')
                 setCategory('')
@@ -137,7 +126,7 @@ function Table() {
                                     return (
                                             <tr key={el.id} className={styles['row-data']}>
                                                 <td>{el.id}</td>
-                                                <td><img src={process.env.PUBLIC_URL + el.imgSrc} alt={el.title} /> </td>
+                                                <td><img src={el.imgSrc} alt={el.title} /> </td>
                                                 <td>{el.title}</td>
                                                 <td>{el.category}</td>
                                                 <td>${el.price}</td>
@@ -176,7 +165,7 @@ function Table() {
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="imgupload" className="form-label">Price :</label>
-                                        <input type="file" onChange={e => setProductImage(e.target.files[0])} className="form-control" id="imgupload"/>
+                                        <input type="file" onChange={e => setProductImage(e.target.files[0])} className="form-control" id="imgupload" required/>
                                     </div>
                             </div>
                             <div className="modal-footer">

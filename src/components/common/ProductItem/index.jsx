@@ -48,7 +48,7 @@ function ProductItem({id, title, category, imgSrc, price}) {
             <span className='raleway'>
                 {category}
             </span>
-            <img src={process.env.PUBLIC_URL + imgSrc} alt={title} />
+            <img src={imgSrc} alt={title} />
             <div className={styles.footer}>
                 <h5>
                     ${price}
