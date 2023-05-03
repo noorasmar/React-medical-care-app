@@ -1,11 +1,13 @@
 import {
-    TopBar
+    Dbar,
+    Dbody
 } from '../components';
 
 function DashboardPage() {
     return (
         <>
-            <TopBar />
+            <Dbar />
+            <Dbody />
         </>
         
     );

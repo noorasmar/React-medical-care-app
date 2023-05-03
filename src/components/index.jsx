@@ -10,3 +10,5 @@ export { default as Reviews} from './Reviews';
 export { default as ContactUs} from './ContactUs';
 export { default as Subscribe} from './Subscribe';
 export { default as Footer} from './Footer';
+export { default as Dbar} from './Dbar';
+export { default as Dbody} from './Dbody';

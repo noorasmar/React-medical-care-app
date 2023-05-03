@@ -1,0 +1,35 @@
+.bar{
+    padding: 30px;
+    background-color: var(--font-bold-color);
+    color: #fff;
+}
+.bar .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bar .user{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 900;
+}
+.bar .user i{
+    font-size: 2rem;
+}
+.bar .log-out{
+    display: flex;
+    font-weight: 900;
+}
+.bar .log-out a{
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.bar .log-out i{
+    font-size: 2rem;
+}

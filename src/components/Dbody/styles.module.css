@@ -1,0 +1,8 @@
+.d-body{
+    background-color: var(--product-color);
+    padding: 10px 0px;
+    min-height: calc(100vh - 108px);
+}
+.d-body .container{
+    padding-top: 50px;
+}

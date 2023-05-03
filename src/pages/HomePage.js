@@ -11,7 +11,7 @@ import {
     Reviews,
     ContactUs,
     Subscribe,
-    Footer
+    Footer,
 } from '../components';
 
 function HomePage() {

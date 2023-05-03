@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import ProductItem from '../common/ProductItem';
 import Slider from "react-slick";
 import { useProductList } from '../../hooks/useProductList';
+import Loader from './../common/Loader';
 
 const settings = {
     dots: false,
@@ -35,7 +36,7 @@ const settings = {
 ],
 };
 function Products() {
-    const products = useProductList();
+    const {products, loading} = useProductList();
 
     return (
         <section className={styles.products}>
@@ -45,10 +46,13 @@ function Products() {
                 </h4>
                 <h3 className='oswald'>
                     BESTSELLER PRODUCTS
-                </h3>                
-                <div className={classnames("row g-4 desktop",styles['desktop'])}>
-                    {       
-                            products.map((el) => (
+                </h3>     
+                {loading ? (
+                    <Loader />
+                ) : (
+                    <div className={classnames("row g-4 desktop",styles['desktop'])}>
+                        {       
+                            products.slice(0, 8).map((el) => (
                                 <div className="col-md-3" key={el.id}>
                                     <ProductItem
                                     id={el.id}
@@ -58,9 +62,15 @@ function Products() {
                                     price={el.price}
                                     />
                                 </div>
-                    ))}
-                </div>
-                <div className={classnames("row g-4 mobile",styles['mobile'])}>
+                        ))}
+                    </div>
+                )
+                }
+                
+                {loading ? (
+                    <Loader />
+                ) : (
+                    <div className={classnames("row g-4 mobile",styles['mobile'])}>
                     <div className="col-md-12">
                         <Slider {...settings} arrows={false} className="slick-slider">
                             {products.map((el) => (
@@ -77,6 +87,9 @@ function Products() {
                         </Slider>
                     </div>
                 </div>
+                )
+                }
+                
             </div>
         </section>
     );
