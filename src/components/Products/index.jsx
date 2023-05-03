@@ -1,8 +1,8 @@
 import styles from './styles.module.css';
 import classnames from 'classnames';
-import PRODUCTS from './mockObject';
 import ProductItem from '../common/ProductItem';
 import Slider from "react-slick";
+import { useProductList } from '../../hooks/useProductList';
 
 const settings = {
     dots: false,
@@ -35,7 +35,8 @@ const settings = {
 ],
 };
 function Products() {
-    
+    const products = useProductList();
+
     return (
         <section className={styles.products}>
             <div className="container">
@@ -47,7 +48,7 @@ function Products() {
                 </h3>                
                 <div className={classnames("row g-4 desktop",styles['desktop'])}>
                     {       
-                            PRODUCTS.map((el) => (
+                            products.map((el) => (
                                 <div className="col-md-3" key={el.id}>
                                     <ProductItem
                                     id={el.id}
@@ -62,7 +63,7 @@ function Products() {
                 <div className={classnames("row g-4 mobile",styles['mobile'])}>
                     <div className="col-md-12">
                         <Slider {...settings} arrows={false} className="slick-slider">
-                            {PRODUCTS.map((el) => (
+                            {products.map((el) => (
                                 <div className="col-md-3" key={el.id}>
                                     <ProductItem
                                     id={el.id}

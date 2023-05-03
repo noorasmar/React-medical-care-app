@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import LovesContext from '../contexts/LovesContext';
+import { LoveProvider } from '../contexts/LovesContext';
 import { CartProvider } from '../contexts/CartContext';
 import {
     TopBar, 
@@ -16,11 +15,10 @@ import {
 } from '../components';
 
 function HomePage() {
-    const [loves, setLoves] = useState(0);
     return (
         <>
             <CartProvider>
-                <LovesContext.Provider value={{ loves, setLoves }}>
+                <LoveProvider>
                     <TopBar />
                     <Nav />
                     <Header />
@@ -32,7 +30,7 @@ function HomePage() {
                     <ContactUs />
                     <Subscribe />
                     <Footer />
-                </LovesContext.Provider>
+                </LoveProvider>
             </CartProvider>
         </>
         
