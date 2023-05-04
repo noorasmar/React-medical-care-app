@@ -190,7 +190,7 @@ function Table() {
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="imgupload" className="form-label">Price :</label>
-                                        <input type="file" value={productImage} onChange={e => setProductImage(e.target.files[0])} className="form-control" id="imgupload" required/>
+                                        <input type="file" onChange={e => setProductImage(e.target.files[0])} className="form-control" id="imgupload" required/>
                                     </div>
                             </div>
                             <div className="modal-footer">
@@ -225,7 +225,7 @@ function Table() {
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="imgupload2" className="form-label">Price :</label>
-                                        <input type="file" value={productImage} onChange={e => setProductImage(e.target.files[0])} className="form-control" id="imgupload2" />
+                                        <input type="file" onChange={e => setProductImage(e.target.files[0])} className="form-control" id="imgupload2" />
                                     </div>
                             </div>
                             <div className="modal-footer">
