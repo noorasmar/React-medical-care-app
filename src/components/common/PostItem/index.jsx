@@ -8,7 +8,7 @@ function PostItem({google, trending, newEvents, info, date, comments, imgSrc}) {
 
     return (
         <div className={styles.item}>
-            <div className={styles.image} style={{backgroundImage: `url('/public/${imgSrc}')`}}>
+            <div className={styles.image} style={{backgroundImage: `url('/public${imgSrc}')`}}>
                 <h6 className='montserrat'>NEW</h6>
             </div>
             <div className={styles.data}>
@@ -19,7 +19,7 @@ function PostItem({google, trending, newEvents, info, date, comments, imgSrc}) {
                 </div>
                 <h4 className='montserrat'>
                     {
-                        title 
+                        title
                     }
                 </h4>
                 <p className='montserrat'>
