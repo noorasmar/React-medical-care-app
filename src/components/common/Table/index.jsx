@@ -3,14 +3,13 @@ import { useProductList } from '../../../hooks/useProductList';
 import useAddProduct from '../../../hooks/useAddProduct';
 import useUpdateProduct from './../../../hooks/useUpdateProduct';
 import useDeleteProduct from './../../../hooks/useDeleteProduct';
-import useImageToBinary from './../../../hooks/useImageToBinary';
 import Loader from '../Loader';
 import { useState, useEffect } from 'react';
 
 function Table() {
 
     const {products, loading, setProducts} = useProductList();
-    const {productAdded, addProduct} = useAddProduct();
+    const {productAdded, addProduct, setProductAdded} = useAddProduct();
     const {productUpdated, updateProduct} = useUpdateProduct();
     const {productDeleted, deleteProduct} = useDeleteProduct();
 
@@ -20,12 +19,12 @@ function Table() {
     const [price, setPrice] = useState(0);
     const [imgSrc, setImgSrc] = useState('');
     const [productImage, setProductImage] = useState(null);
-    const [imageURL, setImageURL] = useState("");
 
     useEffect(() => {
         if (productAdded.length > 0) {
             
             setProducts([...products, ...productAdded]);
+            setProductAdded([]);
         }
     }, [productAdded]);
 
@@ -53,7 +52,7 @@ function Table() {
         //Upload image 
         const formData = new FormData();
         formData.append("image", productImage);
-        const apiKey = '0909b78b2cea8a69a0dca74e605e3fe9'
+        const apiKey = process.env.REACT_APP_API_KEY
         try {
             const response = await fetch(
                 `https://api.imgbb.com/1/upload?key=${apiKey}`,
@@ -68,6 +67,8 @@ function Table() {
                 setTitle('')
                 setCategory('')
                 setPrice(0)
+                setProductImage(null)
+                setImgSrc('')
             });
         } catch (error) {
             console.error(error);
@@ -76,12 +77,36 @@ function Table() {
 
     const handleUpdate = async (event) => {
         event.preventDefault();
+        const productData = { title, category, price, imgSrc};
+
+        //Upload image 
+        if (productImage) {
+            const formData = new FormData();
+            formData.append("image", productImage);
+            const apiKey = process.env.REACT_APP_API_KEY
+            try {
+                const response = await fetch(
+                    `https://api.imgbb.com/1/upload?key=${apiKey}`,
+                    {
+                        method: "POST",
+                        body: formData,
+                    }
+                );
+                const data = await response.json();
+                productData.imgSrc = data.data.url
+                } catch (error) {
+                    console.error(error);
+                }
+        }else {
+            productData.imgSrc = imgSrc;
+        }
         try {
-            const productData = { title, category, price, imgSrc};
             updateProduct(id, productData, (newProduct) => {
                 setTitle('')
                 setCategory('')
                 setPrice(0)
+                setProductImage(null)
+                setImgSrc('')
             });
         } catch (error) {
             console.error(error);
@@ -126,11 +151,11 @@ function Table() {
                                     return (
                                             <tr key={el.id} className={styles['row-data']}>
                                                 <td>{el.id}</td>
-                                                <td><img src={el.imgSrc} alt={el.title} /> </td>
+                                                <td><img src={el.imgSrc} /> </td>
                                                 <td>{el.title}</td>
                                                 <td>{el.category}</td>
                                                 <td>${el.price}</td>
-                                                <td><button type="button" className="btn btn-link" data-bs-toggle="modal" onClick={e => setId(el.id)} data-bs-target="#exampleModal2">Edit</button></td>
+                                                <td><button type="button" className="btn btn-link" data-bs-toggle="modal" onClick={e => {setId(el.id); setImgSrc(el.imgSrc);setTitle(el.title);setCategory(el.category);setPrice(el.price)}} data-bs-target="#exampleModal2">Edit</button></td>
                                                 <td><button type="button" className="btn btn-danger" data-bs-toggle="modal" onClick={e => setId(el.id)} data-bs-target="#exampleModal3">Delete</button></td>
                                             </tr>
                                     )
@@ -165,7 +190,7 @@ function Table() {
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="imgupload" className="form-label">Price :</label>
-                                        <input type="file" onChange={e => setProductImage(e.target.files[0])} className="form-control" id="imgupload" required/>
+                                        <input type="file" value={productImage} onChange={e => setProductImage(e.target.files[0])} className="form-control" id="imgupload" required/>
                                     </div>
                             </div>
                             <div className="modal-footer">
@@ -188,19 +213,23 @@ function Table() {
                             <div className="modal-body">
                                     <div className="mb-3">
                                         <label htmlFor="edittitle" className="form-label">Title :</label>
-                                        <input type="text" value={title} onChange={e => setTitle(e.target.value)} className="form-control" id="edittitle" placeholder="Orthopedics" required/>
+                                        <input type="text" value={title} onChange={e => setTitle(e.target.value)} className="form-control" id="edittitle" placeholder="Orthopedics" />
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="editcategory" className="form-label">Category :</label>
-                                        <input type="text" value={category} onChange={e => setCategory(e.target.value)} className="form-control" id="editcategory" placeholder="Technology" required/>
+                                        <input type="text" value={category} onChange={e => setCategory(e.target.value)} className="form-control" id="editcategory" placeholder="Technology" />
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="editprice" className="form-label">Price :</label>
-                                        <input type="number" value={price} onChange={e => setPrice(e.target.value)} className="form-control" id="editprice" placeholder="6.48" required/>
+                                        <input type="number" value={price} onChange={e => setPrice(e.target.value)} className="form-control" id="editprice" placeholder="6.48" />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label htmlFor="imgupload2" className="form-label">Price :</label>
+                                        <input type="file" value={productImage} onChange={e => setProductImage(e.target.files[0])} className="form-control" id="imgupload2" />
                                     </div>
                             </div>
                             <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={e => {setId(0); setImgSrc('');setTitle('');setCategory('');setPrice(0);setProductImage(null)}}>Close</button>
                                 <button type="submit" className="btn btn-primary" data-bs-dismiss="modal">Update</button>
                             </div>
                         </form>

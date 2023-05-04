@@ -4,7 +4,7 @@ import { UPDATE_PRODUCT_API } from '../API/api';
 const useUpdateProduct = () => {
     const [productUpdated, setProductUpdated] = useState([]);
     
-    const updateProduct = async (id, newData) => {
+    const updateProduct = async (id, newData, onSuccess) => {
         try {
                 const response = await fetch(UPDATE_PRODUCT_API.replace(':id', id), {
                     method: 'PUT',
@@ -20,6 +20,7 @@ const useUpdateProduct = () => {
 
                 const data = await response.json();
                 setProductUpdated([data])
+                onSuccess(data);
 
             } catch (error) {
                 console.error(error);

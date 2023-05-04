@@ -25,7 +25,7 @@ const useAddProduct = () => {
         }
     };
 
-    return {productAdded, addProduct};
+    return {productAdded, addProduct, setProductAdded};
 };
 
 export default useAddProduct;

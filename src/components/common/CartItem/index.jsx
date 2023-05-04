@@ -3,7 +3,7 @@ import styles from './styles.module.css'
 function CartItem({title, price, quantity, imgSrc}) {
     return (
         <div className={styles.item}>
-            <img src={process.env.PUBLIC_URL + imgSrc} alt="tool" />
+            <img src={imgSrc} alt="tool" />
             <div className={styles.info}>
                 <h6>{title}</h6>
                 <div className={styles.desc}>
